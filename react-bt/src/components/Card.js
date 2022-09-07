@@ -1,20 +1,22 @@
 import React from "react";
+import PropTypes from 'prop-types'
+import Image from "../assets/picture/card-img.png";
 
-const Card = (props) => {
+const Card = ({imgLink, btnLink, title, text}) => {
   return (
     <>
       <div className="col-4 g-4">
         <div className="card">
           <img
-            src={props.imgLink}
+            src={imgLink}
             alt="product-img"
             style={{ height: 200, weight: 200 }}
             className="img-thumbnail"
           />
           <div className="card-body">
-            <h5 className="card-title">{props.title}</h5>
-            <p className="card-text">{props.text}</p>
-            <a href={props.btnLink} className="btn btn-secondary">
+            <h5 className="card-title">{title}</h5>
+            <p className="card-text">{text}</p>
+            <a href={btnLink} className="btn btn-secondary">
               Details
             </a>
           </div>
@@ -23,5 +25,19 @@ const Card = (props) => {
     </>
   );
 };
+
+Card.defaultProps = {
+  imgLink: Image,
+  title: "Businessman",
+  text: "You wanna be one of them.",
+  btnLink: "https://google.com"
+}
+
+Card.propTypes = {
+  imgLink: PropTypes.string,
+  title: PropTypes.string,
+  text: PropTypes.string,
+  btnLink: PropTypes.string,
+}
 
 export default Card;
