@@ -1,28 +1,26 @@
-import React, { useState } from 'react'
-
-
-const Home = () => {
-    const [name, setName] = useState("Anik Ronjon")
-    const [address, setAddress] = useState("Sherpur")
-
-    const changeName = () =>{
-        setName("Anik Barmon")
-    }
-
-    const changeAddress = () => {
-        setAddress("Dhaka")
-    }
-    return(
-        <>
-            <h2>Home Component</h2>
-            <h4>name: {name}
-            <button onClick={changeName}>Click Me</button>
-            </h4>
-            <h4>address: {address}
-            <button onClick={changeAddress}>Click Me</button>
-            </h4>
-        </>
-    )
-}
+import React from "react";
+import Card from "../../components/Card";
+import cardImage from "../../assets/picture/card-img.png";
+const Home = (props) => {
+  return (
+    <>
+      <h2>My Home Page</h2>
+      <div className="row">
+        <Card
+          imgLink={cardImage}
+          title="Anik Ronjon Barmon"
+          text="You can write your CSS"
+          btnLink="https://google.com"
+        />
+        <Card
+          imgLink={cardImage}
+          title="Anik Ronjon Barmon"
+          text="You can write your CSS"
+          btnLink="https://google.com"
+        />
+      </div>
+    </>
+  );
+};
 
 export default Home;
