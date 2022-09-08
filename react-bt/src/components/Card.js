@@ -33,11 +33,5 @@ Card.defaultProps = {
   btnLink: "https://google.com"
 }
 
-Card.propTypes = {
-  imgLink: PropTypes.string,
-  title: PropTypes.string,
-  text: PropTypes.string,
-  btnLink: PropTypes.string,
-}
 
 export default Card;
